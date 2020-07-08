@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -91,6 +93,27 @@ namespace Identity.Controllers
         public async Task<IActionResult> Logout() 
         {
             await _signInManager.SignOutAsync();
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> SendEmail()
+        {
+            using (MailMessage mail = new MailMessage())
+            {
+                mail.From = new MailAddress("wow.alpha.00@gmail.com");
+                mail.To.Add("plotnik.alexander@gmail.com");
+                mail.Subject = "PIN Code Authentication";
+                mail.Body = "<h1>PIN: 987654</h1>";
+                mail.IsBodyHtml = true;
+                //mail.Attachments.Add(new Attachment("C:\\file.zip"));
+
+                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    smtp.Credentials = new NetworkCredential("wow.alpha.00@gmail.com", "01Fleetwood");
+                    smtp.EnableSsl = true;
+                    smtp.Send(mail);
+                }
+            }
             return RedirectToAction("Index");
         }
     }

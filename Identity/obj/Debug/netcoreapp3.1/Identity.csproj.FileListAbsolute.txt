@@ -56,3 +56,4 @@ D:\GitRepos\ASP-Authentication\Identity\obj\Debug\netcoreapp3.1\Identity.Views.p
 D:\GitRepos\ASP-Authentication\Identity\obj\Debug\netcoreapp3.1\Identity.dll
 D:\GitRepos\ASP-Authentication\Identity\obj\Debug\netcoreapp3.1\Identity.pdb
 D:\GitRepos\ASP-Authentication\Identity\obj\Debug\netcoreapp3.1\Identity.genruntimeconfig.cache
+D:\GitRepos\ASP-Authentication\Identity\obj\Debug\netcoreapp3.1\Razor\Views\Home\Verification.cshtml.g.cs
