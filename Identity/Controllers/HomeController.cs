@@ -109,7 +109,7 @@ namespace Identity.Controllers
 
                 using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
                 {
-                    smtp.Credentials = new NetworkCredential("wow.alpha.00@gmail.com", "01Fleetwood");
+                    smtp.Credentials = new NetworkCredential("wow.alpha.00@gmail.com", "########");
                     smtp.EnableSsl = true;
                     smtp.Send(mail);
                 }
